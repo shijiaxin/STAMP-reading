@@ -43,3 +43,8 @@ stream\_generate，产生一系列的streams，其中包含一定比例的attack
 -
 第三个Transaction是取出一个完整的stream。
 取出来之后在Transaction外检查一下这个stream是不是包含什么不和谐的字符串。
+
+##Transaction介绍
+- 取出package
+- 处理package
+- 取出stream

@@ -78,3 +78,19 @@ sequencer_run的step 1是使用hashtable清理重复的segment。
 
 ###step 3
 最后做一些收尾的工作，比如如果有多个不同的链，把它们连起来即可。
+
+##Transaction分析
+- 把segment插入到uniqueSegmentsPtr中。去重。
+
+---
+- 把segment从hashtable移到array里。
+- 把独立的segment插入到前缀hashtable中。s-1个表。
+- 把segment插入到hashtable中，方便快速查找。1个表。
+
+---
+- 合并segment。
+
+(transaction之间的线表示有barrier)
+
+其中第三个transaction可以拆分成不同的transaction保护，因为s-1个表不会互相干扰。性能瓶颈也是在这里的前缀为1的hashtable的构建。因为它只有4种可能……
+
