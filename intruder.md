@@ -1,6 +1,7 @@
 #Intruder
 
 ##简介
+Intruder 是一个检测网络攻击的benchmark。有一系列的message，每个message会被拆分成若干个package。应用的目的是将这些package进行重组，恢复出原始的message，然后检测这些message是否存在某些关键词。如果存在这些关键词，就认为这个message是个恶意的message。
 
 ##实现
 ###<center>数据结构
